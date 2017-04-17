@@ -1,0 +1,497 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/rtsao/csjs">csjs (v1.1.0)</a>
+</h1>
+<h4>Cascading Style JavaScripts</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs">module csjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.csjs">
+            function <span class="apidocSignatureSpan"></span>csjs
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.base62_encode">
+            function <span class="apidocSignatureSpan">csjs.</span>base62_encode
+            <span class="apidocSignatureSpan">(integer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.getCss">
+            function <span class="apidocSignatureSpan">csjs.</span>getCss
+            <span class="apidocSignatureSpan">(csjs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.noScope">
+            function <span class="apidocSignatureSpan">csjs.</span>noScope
+            <span class="apidocSignatureSpan">(strings, values)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.toString">
+            function <span class="apidocSignatureSpan">csjs.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs.base62_encode">module csjs.base62_encode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.base62_encode.base62_encode">
+            function <span class="apidocSignatureSpan">csjs.</span>base62_encode
+            <span class="apidocSignatureSpan">(integer)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs.csjs">module csjs.csjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.csjs.csjs">
+            function <span class="apidocSignatureSpan">csjs.</span>csjs
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs.getCss">module csjs.getCss</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.getCss.getCss">
+            function <span class="apidocSignatureSpan">csjs.</span>getCss
+            <span class="apidocSignatureSpan">(csjs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs.noScope">module csjs.noScope</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.noScope.noScope">
+            function <span class="apidocSignatureSpan">csjs.</span>noScope
+            <span class="apidocSignatureSpan">(strings, values)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csjs.toString">module csjs.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csjs.toString.toString">
+            function <span class="apidocSignatureSpan">csjs.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs" id="apidoc.module.csjs">module csjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.csjs" id="apidoc.element.csjs.csjs">
+        function <span class="apidocSignatureSpan"></span>csjs
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function csjsTemplate(opts) {
+  opts = (typeof opts === 'undefined') ? {} : opts;
+  var noscope = (typeof opts.noscope === 'undefined') ? false : opts.noscope;
+
+  return function csjsHandler(strings, values) {
+    // Fast path to prevent arguments deopt
+    var values = Array(arguments.length - 1);
+    for (var i = 1; i &lt; arguments.length; i++) {
+      values[i - 1] = arguments[i];
+    }
+    var css = joiner(strings, values.map(selectorize));
+    var ignores = ignoreComposition(values);
+
+    var scope = noscope ? extractExports(css) : scopify(css, ignores);
+    var extracted = extractExtends(scope.css);
+    var localClasses = without(scope.classes, ignores);
+    var localKeyframes = without(scope.keyframes, ignores);
+    var compositions = extracted.compositions;
+
+    var exports = buildExports(localClasses, localKeyframes, compositions);
+
+    return Object.defineProperty(exports, cssKey, {
+      enumerable: false,
+      configurable: false,
+      writeable: false,
+      value: extracted.css
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.base62_encode" id="apidoc.element.csjs.base62_encode">
+        function <span class="apidocSignatureSpan">csjs.</span>base62_encode
+        <span class="apidocSignatureSpan">(integer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(integer) {
+  if (integer === 0) {
+    return '0';
+  }
+  var str = '';
+  while (integer &gt; 0) {
+    str = CHARS[integer % 62] + str;
+    integer = Math.floor(integer / 62);
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.getCss" id="apidoc.element.csjs.getCss">
+        function <span class="apidocSignatureSpan">csjs.</span>getCss
+        <span class="apidocSignatureSpan">(csjs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getCss(csjs) {
+  return csjs[cssKey];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+/*
+&lt;div class="panel_4Eda43"&gt;
+  &lt;h1 class="title_4Eda43"&gt;Hello World!&lt;/h1&gt;
+&lt;/div&gt;
+*/
+
+const css = csjs.<span class="apidocCodeKeywordSpan">getCss</span>(styles);
+/*
+.panel_4Eda43 {
+  border: 1px solid black;
+  background-color: #33aa22;
+}
+
+.title_4Eda43 {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.noScope" id="apidoc.element.csjs.noScope">
+        function <span class="apidocSignatureSpan">csjs.</span>noScope
+        <span class="apidocSignatureSpan">(strings, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function csjsHandler(strings, values) {
+  // Fast path to prevent arguments deopt
+  var values = Array(arguments.length - 1);
+  for (var i = 1; i &lt; arguments.length; i++) {
+    values[i - 1] = arguments[i];
+  }
+  var css = joiner(strings, values.map(selectorize));
+  var ignores = ignoreComposition(values);
+
+  var scope = noscope ? extractExports(css) : scopify(css, ignores);
+  var extracted = extractExtends(scope.css);
+  var localClasses = without(scope.classes, ignores);
+  var localKeyframes = without(scope.keyframes, ignores);
+  var compositions = extracted.compositions;
+
+  var exports = buildExports(localClasses, localKeyframes, compositions);
+
+  return Object.defineProperty(exports, cssKey, {
+    enumerable: false,
+    configurable: false,
+    writeable: false,
+    value: extracted.css
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.toString" id="apidoc.element.csjs.toString">
+        function <span class="apidocSignatureSpan">csjs.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs.base62_encode" id="apidoc.module.csjs.base62_encode">module csjs.base62_encode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.base62_encode.base62_encode" id="apidoc.element.csjs.base62_encode.base62_encode">
+        function <span class="apidocSignatureSpan">csjs.</span>base62_encode
+        <span class="apidocSignatureSpan">(integer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(integer) {
+  if (integer === 0) {
+    return '0';
+  }
+  var str = '';
+  while (integer &gt; 0) {
+    str = CHARS[integer % 62] + str;
+    integer = Math.floor(integer / 62);
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs.csjs" id="apidoc.module.csjs.csjs">module csjs.csjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.csjs.csjs" id="apidoc.element.csjs.csjs.csjs">
+        function <span class="apidocSignatureSpan">csjs.</span>csjs
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function csjsTemplate(opts) {
+  opts = (typeof opts === 'undefined') ? {} : opts;
+  var noscope = (typeof opts.noscope === 'undefined') ? false : opts.noscope;
+
+  return function csjsHandler(strings, values) {
+    // Fast path to prevent arguments deopt
+    var values = Array(arguments.length - 1);
+    for (var i = 1; i &lt; arguments.length; i++) {
+      values[i - 1] = arguments[i];
+    }
+    var css = joiner(strings, values.map(selectorize));
+    var ignores = ignoreComposition(values);
+
+    var scope = noscope ? extractExports(css) : scopify(css, ignores);
+    var extracted = extractExtends(scope.css);
+    var localClasses = without(scope.classes, ignores);
+    var localKeyframes = without(scope.keyframes, ignores);
+    var compositions = extracted.compositions;
+
+    var exports = buildExports(localClasses, localKeyframes, compositions);
+
+    return Object.defineProperty(exports, cssKey, {
+      enumerable: false,
+      configurable: false,
+      writeable: false,
+      value: extracted.css
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs.getCss" id="apidoc.module.csjs.getCss">module csjs.getCss</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.getCss.getCss" id="apidoc.element.csjs.getCss.getCss">
+        function <span class="apidocSignatureSpan">csjs.</span>getCss
+        <span class="apidocSignatureSpan">(csjs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getCss(csjs) {
+  return csjs[cssKey];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+/*
+&lt;div class="panel_4Eda43"&gt;
+  &lt;h1 class="title_4Eda43"&gt;Hello World!&lt;/h1&gt;
+&lt;/div&gt;
+*/
+
+const css = csjs.<span class="apidocCodeKeywordSpan">getCss</span>(styles);
+/*
+.panel_4Eda43 {
+  border: 1px solid black;
+  background-color: #33aa22;
+}
+
+.title_4Eda43 {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs.noScope" id="apidoc.module.csjs.noScope">module csjs.noScope</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.noScope.noScope" id="apidoc.element.csjs.noScope.noScope">
+        function <span class="apidocSignatureSpan">csjs.</span>noScope
+        <span class="apidocSignatureSpan">(strings, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function csjsHandler(strings, values) {
+  // Fast path to prevent arguments deopt
+  var values = Array(arguments.length - 1);
+  for (var i = 1; i &lt; arguments.length; i++) {
+    values[i - 1] = arguments[i];
+  }
+  var css = joiner(strings, values.map(selectorize));
+  var ignores = ignoreComposition(values);
+
+  var scope = noscope ? extractExports(css) : scopify(css, ignores);
+  var extracted = extractExtends(scope.css);
+  var localClasses = without(scope.classes, ignores);
+  var localKeyframes = without(scope.keyframes, ignores);
+  var compositions = extracted.compositions;
+
+  var exports = buildExports(localClasses, localKeyframes, compositions);
+
+  return Object.defineProperty(exports, cssKey, {
+    enumerable: false,
+    configurable: false,
+    writeable: false,
+    value: extracted.css
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csjs.toString" id="apidoc.module.csjs.toString">module csjs.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csjs.toString.toString" id="apidoc.element.csjs.toString.toString">
+        function <span class="apidocSignatureSpan">csjs.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
