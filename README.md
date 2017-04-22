@@ -1,4 +1,7 @@
-# api documentation for  [csjs (v1.1.0)](https://github.com/rtsao/csjs)  [![npm package](https://img.shields.io/npm/v/npmdoc-csjs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-csjs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-csjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-csjs)
+# npmdoc-csjs
+
+#### api documentation for  [csjs (v1.1.0)](https://github.com/rtsao/csjs)  [![npm package](https://img.shields.io/npm/v/npmdoc-csjs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-csjs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-csjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-csjs)
+
 #### Cascading Style JavaScripts
 
 [![NPM](https://nodei.co/npm/csjs.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/csjs)
@@ -74,7 +77,8 @@
         "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)",
         "travis-test-browser": "zuul -- test/index.js"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
